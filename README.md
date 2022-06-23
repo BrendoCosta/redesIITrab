@@ -13,10 +13,11 @@ Instale todas as dependencias com
 npm install
 ```
 
-Na root do projeto rode 
+dentro do frontend e do backend 
+
+
+Uma vez na root do front e do back execute dentro de cada um 
 
 ```bash
-node run start
+npm start
 ```
-
-Isso irá iniciar o backend na porta 3000 com o nodemon, com ele a cada alteração no código o servidor local é reiniciado automaticamente.
