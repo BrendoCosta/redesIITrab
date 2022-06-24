@@ -77,12 +77,12 @@ body {
 }
 
 .chat-window .chat-header {
+  position: sticky;
+    top: 0;
   height: 45px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   background: var(--gray);
-  /* position: relative; */
-  /* cursor: pointer; */
 }
 
 .chat-window .chat-header p {
@@ -95,10 +95,9 @@ body {
 
 .chat-window .chat-body {
   height: auto;
-
   background: var(--white);
-
   position: relative;
+  padding-bottom: 40px;
 }
 
 .chat-window .chat-body .message-container {
@@ -178,8 +177,12 @@ body {
 }
 
 .chat-window .chat-footer {
-  padding: 10px;
+  position: fixed;
+    left: 0;
+    bottom: 0;
+    /* padding: 10px; */
   height: 40px;
+  width: 100vw;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: #fff;
