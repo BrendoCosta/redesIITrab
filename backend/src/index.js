@@ -1,12 +1,20 @@
-import express from 'express';
-import http from 'http';
-import cors from 'cors';
-import { Server } from 'socket.io';
+import express from "express";
+import http from "http";
+import cors from "cors";
+import { Server } from "socket.io";
+import path from "path";
+
+// Configuração do Express
 
 const app = express();
 app.use(cors());
+app.use(express.static(path.join(path.resolve(), "../../frontend/build/")));
+
+// Configuração do servidor
 
 const server = http.createServer(app);
+
+// Socket.IO
 
 const io = new Server(server, {
   cors: {
