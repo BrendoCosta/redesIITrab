@@ -15,8 +15,5 @@
   },
   "bundleDependencies": [
     "express"
-  ],
-  "devDependencies": {
-    "nodemon": "^2.0.16"
-  }
+  ]
 }
