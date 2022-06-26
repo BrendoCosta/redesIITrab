@@ -4,42 +4,61 @@ import cors from "cors";
 import { Server } from "socket.io";
 import path from "path";
 
+// Configurações gerais
+
+const PORT = 3001
+const CORS_OPTIONS = {
+
+    origin: `http://localhost:${PORT}`,
+    methods: ["GET", "POST"],
+    optionsSuccessStatus: 200
+
+}
+
 // Configuração do Express
 
 const app = express();
-app.use(cors());
+app.use(cors(CORS_OPTIONS));
 app.use(express.static(path.join(path.resolve(), "../../frontend/build/")));
 
 // Configuração do servidor
 
-const server = http.createServer(app);
+const httpServer = http.createServer(app);
+httpServer.listen(PORT, () => { 
+    
+    console.log(`Servidor HTTP executando na porta ${PORT}`) ;
+
+});
 
 // Socket.IO
 
-const io = new Server(server, {
-  cors: {
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"],
-  },
-});
+const io = new Server(httpServer, { transports: ["websocket"], secure: false } );
 
 io.on("connection", (socket) => {
-  console.log(`User Connected: ${socket.id}`);
+  
+    console.log(`Novo usuário conectado: ${socket.id}`);
 
-  socket.on("join_room", (data) => {
-    socket.join(data);
-    console.log(`User with ID: ${socket.id} joined room: ${data}`);
-  });
+    // Eventos definidos
 
-  socket.on("send_message", (data) => {
-    socket.to(data.room).emit("receive_message", data);
-  });
+    socket.on("join_room", (data) => {
+        
+        socket.join(data);
+        console.log(`Usuário com o ID: ${socket.id} conectou-se à sala: ${data}`);
+    
+    });
 
-  socket.on("disconnect", () => {
-    console.log("User Disconnected", socket.id);
-  });
-});
+    socket.on("send_message", (data) => {
 
-server.listen(3001, () => {
-  console.log("SERVER RUNNING");
+        socket.to(data.room).emit("receive_message", data);
+
+    });
+
+    // Eventos padrões
+
+    socket.on("disconnect", () => {
+
+        console.log(`Usuário com o ID: ${socket.id} disconectado`);
+
+    });
+  
 });
