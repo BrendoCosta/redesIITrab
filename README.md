@@ -1,13 +1,3 @@
-<style>
-img {
-    width: 50%;
-    display: block;
-    margin: auto;
-    padding: 2rem;
-}
-hr { margin: 2rem 0 2rem 0; }
-</style>
-
 # Trabalho de Redes II - Chat de mensagens
 
 Este trabalho visa mostrar de forma prática a implementação e o funcionamento de uma aplicação para troca de mensagens instantâneas utilizando o protocolo WebSocket (RFC 6455). Utilizamos um modelo cliente-servidor, onde os vários clientes da aplicação comunicam-se entre si intermediados por um servidor central, que gerencia o fluxo de mensagens entre diferentes salas. Executando sobre o Node.js, a aplicação atua como um servidor HTTP e um servidor WebSocket simultaneamente, utilizando para esta tarefa o módulo HTTP padrão do Node.js e o módulo Socket.IO server-side. Em conjunto com esses dois módulos, a aplicação utiliza o Express para servir a interface do cliente, desenvolvida em React e utilizando o módulo Socket.IO client-side para conectar-se ao servidor WebSocket.
@@ -61,7 +51,7 @@ Servidor HTTP executando na porta 3001
 
 Abra o navegador do seu sistema e prossiga para o endereço `http://localhost:3001` a fim de executar a aplicação. Uma tela inicial com a mensagem "Chat de Redes" deverá ser exibida junto aos campos para preenchimento do nome de usuário e o ID da sala.
 
-![Tela inicial](docs/2022-07-13_23-36.png)
+<p align="center"><img src="docs/2022-07-13_23-36.png" width="50%" alt="Tela inicial"></p>
 
 Observe a saída do processo do servidor em execução; a mensagem "Novo usuário conectado: `<ID>`" deverá ser exibida:
 ```bash
@@ -74,7 +64,7 @@ Novo usuário conectado: mfiVqMWHQeppCz1RAAAB
 
 Insira o nome do seu usuário e o ID da sala, e então acione o botão "Entrar na sala" (em verde). Você deverá ser levado a tela do chat. 
 
-![Tela do chat](docs/2022-07-13_23-00.png)
+<p align="center"><img src="docs/2022-07-13_23-00.png" width="50%" alt="Tela do chat"></p>
 
 Observe a saída do processo do servidor em execução; a mensagem "Usuário com o ID: `<ID>` conectou-se à sala: `<ID DA SALA>`" deverá ser exibida:
 ```bash
@@ -87,7 +77,7 @@ Usuário com o ID: mfiVqMWHQeppCz1RAAAB conectou-se à sala: 1
 
 Em uma nova aba do seu navegador, dirija-se ao mesmo endereço, e repita o processo anterior inserindo um nome de usuário diferente. Mantenha o mesmo ID da sala.
 
-![Tela inicial](docs/2022-07-13_23-16.png)
+<p align="center"><img src="docs/2022-07-13_23-16.png" width="50%" alt="Tela inicial"></p>
 
 Observe a saída do processo do servidor em execução:
 ```bash
@@ -101,9 +91,9 @@ Usuário com o ID: VDrnkQPvPOEo3xW9AAAD conectou-se à sala: 1
 
 Para iniciar a troca de mensagens, insira a mensagem a ser enviada e pressione a tecla `ENTER`. Observe as mensagens sendo enviadas e recebidas através de ambas as abas.
 
-![Tela do chat do usuário 2](docs/2022-07-13_23-20.png)
-![Tela do chat do usuário 1](docs/2022-07-13_23-20_2.png)
-![Tela do chat do usuário 2](docs/2022-07-13_23-21.png)
+<p align="center"><img src="docs/2022-07-13_23-20.png" width="50%" alt="Tela do chat do usuário 2"></p>
+<p align="center"><img src="docs/2022-07-13_23-20_2.png" width="50%" alt="Tela do chat do usuário 1"></p>
+<p align="center"><img src="docs/2022-07-13_23-21.png" width="50%" alt="Tela do chat do usuário 2"></p>
 
 <hr/>
 
