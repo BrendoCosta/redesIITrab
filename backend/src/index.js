@@ -19,7 +19,7 @@ const CORS_OPTIONS = {
 
 const app = express();
 app.use(cors(CORS_OPTIONS));
-app.use(express.static(path.join(path.resolve(), "../../frontend/build/")));
+app.use(express.static(path.join(path.resolve(), "../frontend/build/"), { index: "index.html" }));
 
 // Configuração do servidor
 
@@ -57,7 +57,7 @@ io.on("connection", (socket) => {
 
     socket.on("disconnect", () => {
 
-        console.log(`Usuário com o ID: ${socket.id} disconectado`);
+        console.log(`Usuário com o ID: ${socket.id} desconectado`);
 
     });
   
