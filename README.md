@@ -2,6 +2,9 @@
 
 Este trabalho visa mostrar de forma prática a implementação e o funcionamento de uma aplicação para troca de mensagens instantâneas utilizando o protocolo WebSocket (RFC 6455). Utilizamos um modelo cliente-servidor, onde os vários clientes da aplicação comunicam-se entre si intermediados por um servidor central, que gerencia o fluxo de mensagens entre diferentes salas. Executando sobre o Node.js, a aplicação atua como um servidor HTTP e um servidor WebSocket simultaneamente, utilizando para esta tarefa o módulo HTTP padrão do Node.js e o módulo Socket.IO server-side. Em conjunto com esses dois módulos, a aplicação utiliza o Express para servir a interface do cliente, desenvolvida em React e utilizando o módulo Socket.IO client-side para conectar-se ao servidor WebSocket.
 
+- [Slides da apresentação do trabalho (Google Slides)](https://docs.google.com/presentation/d/16EfvpAueZI6k2By5LW07BchNkFOCSm7W6gNf4EzMnvo/edit?usp=sharing)
+- [Slides da apresentação do trabalho (PDF local)](docs/apresentacao.pdf)
+
 # Como executar localmente
 
 ## Pré-requisitos
@@ -10,9 +13,8 @@ A implementação do trabalho foi realizada através do Node.js, utilizando bibl
 
 - `Node.js`
 - `npm`
-- `Wireshark`
 
-**Observação:** todas as três aplicações listadas acima são multiplataforma, estando disponíveis para diversos sistemas operacionais e arquiteturas.
+**Observação:** ambas as aplicações listadas acima são multiplataforma, estando disponíveis para diversos sistemas operacionais e arquiteturas.
 
 ## Clonagem
 ### Pelo GitHub
